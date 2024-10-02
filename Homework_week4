@@ -1,0 +1,115 @@
+# Question 1
+# Provide a definition of and example for each of these terms:
+
+# | Term | Example | Definition |
+# | ----- | ------- | ---------- |
+# | int  | 10      | An integer is a whole number (without a fractional part). 
+# | float | 3.14    | A floating-point number is a number that has a decimal point. 
+# | string    | "Hello"  | A string is a sequence of characters enclosed in single or double quotes. 
+# | boolean    | True     | A boolean value represents either True or False. 
+# | list | [1, 2, 3] | An ordered, mutable (changeable) collection of items. 
+# | set    | {1, 2, 3} | An unordered collection of unique items. 
+# | dictionary | {"name": "Alice", "age": 30} | A collection of key-value pairs. 
+
+
+# Question 2
+# For each of these operators, for each of the python data types we know, 
+# can it take them as operands? (Assume both operands are the same type.)
+
+# | Operator | Int/Float | String | Boolean | List | Set | Dictionary |
+# | -------  | --------- | ------ | ------- | ----- | --- | --------- |
+# | +     | Yes       | Yes    | No      | Yes  | Yes  | No       |
+# | -     | Yes       | No     | No      | No   | No   | No       |
+# | *     | Yes       | Yes    | No      | Yes  | No   | No       |
+# | /     | Yes       | No     | No      | No   | No   | No       |
+# | **    | Yes       | No     | No      | No   | No   | No       |
+# | %     | Yes       | No     | No      | No   | No   | No       |
+# | ==    | Yes       | Yes    | Yes     | Yes  | Yes  | Yes      |
+# | !=    | Yes       | Yes    | Yes     | Yes  | Yes  | Yes      |
+# | >     | Yes       | Yes    | No      | No   | No   | No       |
+# | <     | Yes       | Yes    | No      | No   | No   | No       |
+# | >=    | Yes       | Yes    | No      | No   | No   | No       |
+# | <=    | Yes       | Yes    | No      | No   | No   | No       |
+# | and   | No        | No     | Yes     | No   | No   | No       |
+# | or    | No        | No     | Yes     | No   | No   | No       |
+# | not   | No        | No     | Yes     | No   | No   | No       |
+# | in    | No        | Yes    | No      | Yes  | Yes  | Yes      |
+# | not in | No        | Yes    | No      | Yes  | Yes  | Yes      |
+
+
+# Question 3
+# List some common dictionary methods.
+
+# * keys()
+# * values()
+# * items()
+# * get()
+# * update() 
+
+
+# Question 4
+# Make a list of resources as in the role of the people you can have this semester to rely on support.
+# For example - `professor`, `TA`, `Dean` etc.
+
+contacts ={
+  'VJ': 'vjain@colby.edu',
+  'Kara': 'kara@colby.edu',
+  'Thomas': 'thomas@colby.edu',
+  'TA_Vishnu': 'vishnu@colby.edu'
+}
+
+# Question 5
+# Write python code to print out the names of all professors in your contacts dictionary
+
+for name, email in contacts.items():
+  if "professor" in name.lower():  
+    print(name)
+
+# Question 6
+# Write python code to create a list of the *names* of all professors, TAs,
+# coaches and class deans from your contacts dictionary
+
+names_list = []
+for name, email in contacts.items():
+  if "professor" in name.lower() or "ta" in name.lower() or "coach" in name.lower() or "dean" in name.lower():
+    names_list.append(name)
+
+print(names_list) 
+
+# Question 7
+# Write python code to create a list of the *contacts* of all professors, TAs,
+# coaches and class deans from your contacts dictionary
+
+contacts_list = []
+for name, email in contacts.items():
+  if "professor" in name.lower() or "ta" in name.lower() or "coach" in name.lower() or "dean" in name.lower():
+    contacts_list.append(email)
+
+print(contacts_list)
+
+# Question 8
+# Write python code to create a list of only the username of each person. 
+# For example, if the email is username@colby.edu, print only username.
+
+usernames = []
+for name, email in contacts.items():
+  username = email.split("@")[0]  # Split the email at "@" and take the first part
+  usernames.append(username)
+
+print(usernames)
+
+# Question 9
+# Write python code to convert the `contacts` dictionary into a list of tuple. 
+# In this tuple, the first item is the name, and the second item is their contact
+
+contacts_tuple = [(name, email) for name, email in contacts.items()]
+print(contacts_tuple)
+
+# Question 10
+# For each object from Q5 - Q9, write their variable name and their type annotation in comments below
+
+# contacts: dict[str, str]
+# names_list: list[str] 
+# contacts_list: list[str]
+# usernames: list[str]
+# contacts_tuple: list[tuple[str, str]]
